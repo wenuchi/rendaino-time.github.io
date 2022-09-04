@@ -10,12 +10,12 @@
   padding: 20px;
   position: fixed;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
 }
 
 
 .top {
-  background-color: #6a5acd;
+  background-color: #fff;
   border: 1px solid #02225233;
   height: 100px;
   text-align: center;
@@ -23,8 +23,8 @@
 }
 
 .top h2 {
-  line-height: 200px;
-  color: #fff;
+  line-height: 100px;
+  color: #0C1664;
 }
 
 .nav_menu {
@@ -37,7 +37,7 @@
 }
 
 .content {
-  max-width: 1020px;
+  max-width: 1920px;
   margin: 0 auto;
 }
 
