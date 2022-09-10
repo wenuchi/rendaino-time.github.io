@@ -1,117 +1,129 @@
 @charset "utf-8";
 /* CSS Document */
 
-div.title {
-    padding: 5px 30px;
-    text-align: center;
-}
-    div.title h1 {
-        margin: 0;
-        font-size: 200%;
-    }
-
-/*pc用スタイル*/
-@media only screen and (min-width: 1024px) {
-    div.wrap {
-        display: -webkit-flex;
-        display: flex;
-    }
-    div.side {
-        -webkit-flex-basis: 300px;
-        flex-basis: 300px;
-    }
-    div.contents {
-        -webkit-flex: 1;
-        flex: 1;
-    }
+header {
+  padding: 16px;
+  background: #1f2c37;
 }
 
-/*三本線メニューのアイコン*/
-span.menu3bar {
-    position: absolute;
-    right: 30px;
-    top: 10px;
+.h-menu{
+  position: relative;
+}
+
+/*inputのcheckboxは非表示に*/
+.h-menuCheckbox {
+  display:none;
+}
+
+/*ハンバーガーメニュー*/
+.h-menu_icon {
     display: inline-block;
-    width: 15px;
-    height: 15px;
-    outline: 1px solid #FFFFFF;
-    background-color: #BCBCBC;
-    border: 5px solid #fff;
+    width: 30px;
+    height: 30px;
     vertical-align: middle;
 }
-    span.menu3bar:before, span.menu3bar:after {
-        position: absolute;
-        content:"";
-        display: block;
-        top: 20%;
-        right: 0;
-        height: 20%;
-        left: 0;
-        background-color: #fff;
-    }
-    span.menu3bar:before {
-        top: 20%;
-    }
-    span.menu3bar:after {
-        top: 60%;
-    }
 
-/*pc用スタイル*/
-@media only screen and (min-width: 1024px) {
-    span.menu3bar {
-        display: none;
-    }
+/*3本線*/
+.hamburger-icon, .hamburger-icon::before, .hamburger-icon::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 100;
+    top:0;
+    bottom:0;
+    width: 32px;
+    height: 3px;
+    background: white;
+    cursor: pointer;
+}
+.hamburger-icon:before {
+    top: 10px;
+}
+.hamburger-icon:after {
+    top: 20px;
 }
 
-/*メニュー*/
-div.menu3bar ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+/*メニュー以外を暗くする*/
+#h-menu_black {
+    display: none;
+    position: fixed;
+    z-index: 98;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .7s ease-in-out;
 }
-div.menu3bar > ul {
+
+/*中身*/
+#h-menu_content {
     position: fixed;
     top: 0;
-    right: -100%;
-
-    max-width: 70%;
-    max-height: 100%;
-
-    background-color: #fff;
-    background-color: rgba(255, 255, 255, 0.8);
-
-    text-align: left;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    max-width: 320px;
+    height: 100vh;
+    padding: 53px 16px 16px;
+    background: #1f2c37;
     overflow: auto;
-    font-size: 80%;
-    line-height: 160%;
-
-    -webkit-overflow-scrolling: touch;
-
-    -webkit-transition: right .3s ease-in-out;
-    transition: right .3s ease-in-out;
+    transition: .3s ease-in-out;
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);
 }
-    div.menu3bar > ul > li {
-        margin: 0;
-        padding: 10px;
-        border-bottom: 1px solid #eee;
-    }
 
-    div.menu3bar > ul ul {
-        margin-left: 10px;
-    }
-    div.menu3bar > ul ul li {
-        padding: 5px;
-    }
+/*チェックボックスにチェックが入ったら表示*/
+input:checked ~ .h-menu_icon .hamburger-icon{
+    background: transparent;
+}
+input:checked ~ .h-menu_icon .hamburger-icon::before{
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top:10px;
+    z-index:999;
+}
+input:checked ~ .h-menu_icon .hamburger-icon::after{
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top:10px;
+    z-index:999;
+}
+input:checked ~ #h-menu_black {
+    display: block;
+    opacity: .8;
+}
+#h-menu_checkbox:checked ~ #h-menu_content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+.h-menu_icon .hamburger-icon,
+.h-menu_icon .hamburger-icon::before,
+.h-menu_icon .hamburger-icon::after,
+#h-menu_black,
+#h-menu_content{
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
 
-    div.menu3bar_on > ul {
-        right: 0;
-    }
-
-/*pc用スタイル（例）*/
-@media only screen and (min-width: 1024px) {
-    div.menu3bar > ul {
-        position: static;
-        max-width: none;
-        overflow: visible;
-    }
+#h-menu_content ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#h-menu_content ul li{
+    border-bottom: solid 1px white;
+}
+#h-menu_content li a {
+    display: block;
+    color: white;
+    font-size: 14px;
+    padding: 24px;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+#h-menu_content li a:hover {
+    background: #455b6d;
 }
