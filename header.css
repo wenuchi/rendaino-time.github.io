@@ -25,14 +25,14 @@
   padding-top:70px;
 }
 
-/*.nav_menu {
+.nav_menu {
   display: flex;
   padding: 10px;
 }
 
 .nav_menu_item {
   margin-left: 20px;
-}*/
+}
 
 .content {
   max-width: 1920px;
@@ -40,6 +40,15 @@
 }
 
 .content_item {
+  background-color: #fff;
+  top:200px;
   padding: 0px;
-  /*text-align: center;*/
+}
+
+.fuwafuwa {
+  background-color: #fff;
+  /*border: 1px solid #02225233;*/
+  height: 100px;
+  text-align: center;
+  padding-top:130px;
 }
