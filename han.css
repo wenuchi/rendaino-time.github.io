@@ -29,13 +29,13 @@ div.title {
 /*三本線メニューのアイコン*/
 span.menu3bar {
     position: absolute;
-    right: 10px;
+    right: 30px;
     top: 10px;
     display: inline-block;
     width: 15px;
     height: 15px;
-    outline: 1px solid #999;
-    background-color: #999;
+    outline: 1px solid #FFFFFF;
+    background-color: #BCBCBC;
     border: 5px solid #fff;
     vertical-align: middle;
 }
