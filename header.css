@@ -3,14 +3,17 @@
 
 /* CSSコード */
 .header {
-  background: #e6e6fa;
-  display: flex;
-  top: 0;
-  height: 50px;
-  padding: 20px;
-  position: fixed;
-  justify-content: space-between;
-  width: 95%;
+    background: #e6e6fa;
+    display: flex;
+    top: 0px;
+    height: 50px;
+    padding: 20px;
+    margin-left: 0px;
+    position: fixed;
+    justify-content: space-between;
+    width: 95%;
+    left: 0px;
+	right:0px;
 }
 
 
