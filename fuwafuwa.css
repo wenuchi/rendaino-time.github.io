@@ -1,0 +1,22 @@
+@charset "utf-8";
+.fuwafuwa {
+  animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
+  background: url("img/yukari2.png") no-repeat center center / 350px auto;
+  display: inline-block;
+  transition: 1.5s ease-in-out;
+  width: 350px;
+  height: 350px;
+  margin-top: 30px;
+}
+ 
+@keyframes fuwafuwa {
+  0% {
+    transform:translate(0, 0) rotate(-7deg);
+  }
+  50% {
+    transform:translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(7deg);
+  }
+}
